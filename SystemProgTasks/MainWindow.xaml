@@ -1,0 +1,247 @@
+﻿<Window x:Class="SystemProgTasks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemProgTasks"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.2*"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <TextBox Text="{Binding Text}" TextWrapping="Wrap" Margin="5" Background="WhiteSmoke" AcceptsReturn="True" AcceptsTab="True" SpellCheck.IsEnabled="True"></TextBox>
+            
+            <DockPanel Grid.Row="5" LastChildFill="False" Margin="0,5">
+                <Button Width="100" Margin="25,0" DockPanel.Dock="Left" Command="{Binding StartCommand}">Start</Button>
+                <Button Width="100"  Margin="25,0" DockPanel.Dock="Right" Command="{Binding StopCommand}">Stop</Button>
+            </DockPanel>
+
+            <Grid Grid.Row="1" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="1.6*"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="18">Options for report</TextBlock>
+                <CheckBox Grid.Row="1" FontSize="14" IsChecked="{Binding IsAddingNumberSentances}">Number sentanses </CheckBox>
+                <CheckBox Grid.Row="2" FontSize="14" IsChecked="{Binding IsAddingNumberInterrogativeSentances}">Number of interrogative sentanses </CheckBox>
+                <CheckBox Grid.Row="3" FontSize="14" IsChecked="{Binding IsAddingNumberExclamationSentances}"> Number of exclamation sentanses</CheckBox>
+                <CheckBox Grid.Row="1" Grid.Column="1" FontSize="14" IsChecked="{Binding IsAddingNumberCharacters}">Number of characters</CheckBox>
+                <CheckBox Grid.Row="2" Grid.Column="1" FontSize="14" IsChecked="{Binding IsAddingNumberWords}">Number of words</CheckBox>
+                <CheckBox Grid.Row="3" Grid.Column="1" FontSize="14" IsChecked="{Binding IsSaving}">Save report to file</CheckBox>
+
+                
+            </Grid>
+
+
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+        <TextBlock  FontSize="25" HorizontalAlignment="Center">Report</TextBlock>
+            <Grid Grid.Column="1" Grid.Row="1" >
+                <Grid.Style>
+                    <Style  TargetType="Grid">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsSaving}" Value="True">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsSaving}" Value="False">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition>
+                    </ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition>
+                      
+
+                           
+                    </RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <TextBlock Margin="5,0"  FontSize="16" Grid.Row="0" Text="Number of sentances:">
+                    <TextBlock.Style>
+                    <Style  TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsAddingNumberSentances}" Value="false">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsAddingNumberSentances}" Value="true">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+
+                            </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Margin="5,0"  FontSize="16" Grid.Row="1" TextWrapping="Wrap" Text="Number of interrogative sentances:">
+                    <TextBlock.Style>
+                        <Style  TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding  IsAddingNumberInterrogativeSentances}" Value="false">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding  IsAddingNumberInterrogativeSentances}" Value="true">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Margin="5,0"  FontSize="16" Grid.Row="2" TextWrapping="Wrap" Text="Number of exclamation sentances:">
+                    <TextBlock.Style>
+                        <Style  TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding  IsAddingNumberExclamationSentances}" Value="false">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding  IsAddingNumberExclamationSentances}" Value="true">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Margin="5,0"  FontSize="16" Grid.Row="3" Text="Number of characters:">
+                    <TextBlock.Style>
+                        <Style  TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding  IsAddingNumberCharacters}" Value="false">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding  IsAddingNumberCharacters}" Value="true">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Margin="5,0"  FontSize="16" Grid.Row="4" Text="Number of words:">
+                    <TextBlock.Style>
+                        <Style  TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsAddingNumberWords}" Value="false">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsAddingNumberWords}" Value="true">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <TextBlock Margin="5,0"  FontSize="16" Grid.Row="0" Grid.Column="1" Text="{Binding Info.NumberSentances}">
+                    <TextBlock.Style>
+                        <Style  TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsAddingNumberSentances}" Value="false">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsAddingNumberSentances}" Value="true">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Margin="5,0"  FontSize="16" Grid.Row="1" Grid.Column="1" Text="{Binding Info.NumberInterrogativeSentances}">
+                    <TextBlock.Style>
+                        <Style  TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding  IsAddingNumberInterrogativeSentances}" Value="false">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding  IsAddingNumberInterrogativeSentances}" Value="true">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Margin="5,0"  FontSize="16" Grid.Row="2" Grid.Column="1" Text="{Binding Info.NumberExclamationSentances}">
+                    <TextBlock.Style>
+                        <Style  TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding  IsAddingNumberExclamationSentances}" Value="false">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding  IsAddingNumberExclamationSentances}" Value="true">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Margin="5,0"  FontSize="16" Grid.Row="3" Grid.Column="1" Text="{Binding Info.NumberCharacters}">
+                    <TextBlock.Style>
+                        <Style  TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsAddingNumberCharacters}" Value="false">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsAddingNumberCharacters}" Value="true">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Margin="5,0"  FontSize="16" Grid.Row="4" Grid.Column="1" Text="{Binding Info.NumberWords}">
+                    <TextBlock.Style>
+                        <Style  TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsAddingNumberWords}" Value="false">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsAddingNumberWords}" Value="true">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+            </Grid>
+    </Grid>
+    </Grid>
+</Window>

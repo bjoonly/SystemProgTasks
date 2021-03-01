@@ -1,0 +1,15 @@
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\bin\Debug\Task45.exe.config
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\bin\Debug\Task45.exe
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\bin\Debug\Task45.pdb
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\obj\Debug\Task45.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\obj\Debug\MainWindow.g.cs
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\obj\Debug\App.g.cs
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\obj\Debug\Task45_MarkupCompile.cache
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\obj\Debug\Task45_MarkupCompile.lref
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\obj\Debug\MainWindow.baml
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\obj\Debug\Task45.g.resources
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\obj\Debug\Task45.Properties.Resources.resources
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\obj\Debug\Task45.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\obj\Debug\Task45.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\obj\Debug\Task45.exe
+C:\Users\Admin\source\repos\SystemProgTasks\Task45\obj\Debug\Task45.pdb

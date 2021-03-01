@@ -1,0 +1,6 @@
+Report
+Number of sentances: 31
+Number of interrogative sentances: 4
+Number of exclamation sentances: 0
+Number of characters: 3684
+Number of words: 696

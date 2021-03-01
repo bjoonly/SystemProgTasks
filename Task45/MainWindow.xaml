@@ -1,0 +1,60 @@
+﻿<Window x:Class="Task45.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task45"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"></RowDefinition>
+            <RowDefinition Height="0.15*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Button  Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Center" FontSize="15" Height="50" Width="100" Name="startButton" Click="startButton_Click" Margin="0,5">
+            Start
+        </Button>
+        <DockPanel LastChildFill="False">
+            <TextBlock FontSize="15" Width="50" Margin="10" VerticalAlignment="Center">From:</TextBlock>
+            <TextBox Text="{Binding FromPath}"  Margin="5" Width="300"></TextBox>
+            <Button Name="fromButton" Margin="5"  FontSize="15" Click="fromButton_Click">Browse</Button>
+        </DockPanel>
+        <DockPanel Grid.Row="1" LastChildFill="False">
+            <TextBlock FontSize="15"  Margin="10" Width="50" VerticalAlignment="Center">To:</TextBlock>
+            <TextBox Text="{Binding ToPath}" Margin="5" Width="300"></TextBox>
+            <Button Name="toButton" Margin="5"  FontSize="15" Click="toButton_Click">Browse</Button>
+        </DockPanel>
+        <Grid Grid.Row="3" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <TextBlock FontSize="18" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Center">Report</TextBlock>
+           
+            <TextBlock FontSize="15" Grid.Row="1">Count files</TextBlock>
+            <TextBlock FontSize="15" Text="{Binding CountFiles}" Grid.Column="1" Grid.Row="1"></TextBlock>
+                  
+            <TextBlock FontSize="15" Grid.Row="2">Count dublicates</TextBlock>
+            <TextBlock FontSize="15" Grid.Row="2" Text="{Binding CountDublicates}" Grid.Column="1"></TextBlock>
+                   
+            <TextBlock FontSize="15" Grid.Row="3">Count moving files</TextBlock>
+            <TextBlock FontSize="15" Grid.Row="3" Text="{Binding CountMoving}" Grid.Column="1"></TextBlock>
+
+        </Grid>
+    </Grid>
+</Window>
